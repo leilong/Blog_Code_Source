@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IDE模拟</title>
+    <style>
+        .right_div{
+            width: 50%;
+            height: 200px;
+            background-color: black;
+            font-size: large;
+        }
+        .left_div{
+            width: 50%;
+            height: 200px;
+        }
+        .line{
+            color: white;
+        }
+        .orange_text{
+            color: orange;
+        }
+        .green_text{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="left_div">
+    <textarea name="" id="" cols="30" rows="10" onkeypress="showInput(event)">echo "hello world";</textarea>
+</div>
+
+<div class="right_div" id="right_div">
+    <div class="line">
+        <span class="orange_text">echo</span>
+        <span class="green_text">&nbsp;"hello world";</span>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    function showInput(event) {
+        var input_string = String.fromCharCode(event.keyCode);
+
+        //创建新行
+        var new_line = document.createElement('div');
+        new_line.setAttribute('class','line');
+        new_line.innerHTML = input_string;
+        document.getElementById('right_div').appendChild(new_line);
+    }
+</script>
+</html>
